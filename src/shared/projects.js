@@ -2,11 +2,11 @@ export const PROJECTS =
     [
         {
         id: 0,
-        name:'Sitio Web',
+        name:'Sitio Web del Club',
         image: 'assets/images/logo.png',
         category: 'mains',
         label:'Hot',
-        price:'4.99',
+        price:'1',
         description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         comments: [
             {

@@ -49,10 +49,12 @@ class ProjectDetail extends React.Component {
   render(){
     if ( this.props.project != null){
       return(
-        <div className="row">
-          {this.renderProject(this.props.project)}
-          {this.renderComments(this.props.project.comments)} 
-        </div>     
+        <div class="container">
+            <div className="row">
+            {this.renderProject(this.props.project)}
+            {this.renderComments(this.props.project.comments)} 
+            </div>  
+        </div>   
       );
     }
     else {
