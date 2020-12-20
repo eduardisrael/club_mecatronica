@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import React from 'react';
+import { Navbar, NavbarBrand } from 'reactstrap';
+import Activity from './components/Activity';
 import './App.css';
+import { PROJECTS } from './shared/projects';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      projects: PROJECTS
+    };
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+        <Navbar dark color="primary">
+          <div class="container">
+            <NavbarBrand href="/">Club de Mecatronica</NavbarBrand> 
+          </div>
+        </Navbar>
+        <Activity projects={this.state.projects}/>
+      </div>
+    );
+  }
 }
 
 export default App;
