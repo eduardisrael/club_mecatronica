@@ -1,8 +1,9 @@
 import React from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
-import ProjectDetail from './ProjectDetailComponent';
-import { PROJECTS } from '../shared/projects';
 import Activity from './ActivityComponent';
+import ProjectDetail from './ProjectDetailComponent';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
+import { PROJECTS } from '../shared/projects';
 
 
 class Main extends React.Component{
@@ -23,16 +24,13 @@ class Main extends React.Component{
 
   render(){
     return (
-      <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-          <NavbarBrand href="/">Club de Mecatronica</NavbarBrand>
-          </div>
-        </Navbar>
+      <div>
+        <Header/>
         <Activity projects={this.state.projects} 
           onClick={(projectId) => this.onProjectSelect(projectId)}
         />
         <ProjectDetail project={this.state.projects.filter((project) => project.id === this.state.selectedProject)[0]}/>
+        <Footer/>
       </div>
     );
   }
