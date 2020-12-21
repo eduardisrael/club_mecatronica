@@ -32,26 +32,26 @@ class Header extends React.Component{
             <Navbar dark expand="md">
                 <div className="container">
                     <NavbarToggler onClick={this.toogleNav} />
-                    <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.svg' height="30" width="41" alt='CM' /></NavbarBrand>
-                    <Collapse isOpen={this.state.isNavOpen} navbar>
+                    <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="80px" alt='CM' /></NavbarBrand>
+                    <Collapse isOpen={this.state.isNavOpen} navbar className="justify-content-center">
                         <Nav navbar>
-                        <NavItem>
-                            <NavLink className="nav-link"  to='/home'> Inicio</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="nav-link" to='/aboutus'> Acerca de</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="nav-link"  to='/activity'> Proyectos</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="nav-link" to='/contactus'> Contactanos</NavLink>
-                        </NavItem>
-                        </Nav>
+                            <NavItem>
+                                <NavLink className="nav-link"  to='/home'> Inicio</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to='/aboutus'> Acerca de</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link"  to='/activity'> Proyectos</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to='/contactus'> Contactanos</NavLink>
+                            </NavItem>
+                            </Nav>
                     </Collapse>
                 </div>
             </Navbar>
-            <Jumbotron>
+            <Jumbotron fluid>
             <div className="container">
                 <div className="row row-header">
                     <div className="col-12 col-sm-6">

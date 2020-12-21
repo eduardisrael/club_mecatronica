@@ -3,7 +3,7 @@ export const PROJECTS =
         {
         id: 0,
         name:'Sitio Web del Club',
-        image: 'assets/images/uthappizza.png',
+        image: 'assets/images/club3.png',
         category: 'mains',
         label:'Hot',
         price:'1',
@@ -27,7 +27,7 @@ export const PROJECTS =
         {
         id: 1,
         name:'PlanTV',
-        image: 'assets/images/uthappizza.png',
+        image: 'assets/images/directiva.png',
         category: 'appetizer',
         label:'',
         price:'1.99',

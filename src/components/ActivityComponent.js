@@ -6,7 +6,7 @@ function RenderActivityItem ({project,onClick}){
   return (
     <Card onClick={() => onClick(project.id)}>
       <CardTitle className="text-center">{project.name}</CardTitle>
-      <CardImg width="100%" height="100%" object src={project.image} alt = {project.image} />
+      <CardImg object src={project.image} alt = {project.image} />
     </Card>
   );
 }
