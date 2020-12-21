@@ -37,4 +37,4 @@ const Activity = (props) => {
 }
 
   
-  export default Activity;
+export default Activity;

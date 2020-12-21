@@ -49,8 +49,8 @@ const ProjectDetail = (props) => {
     return(
       <div class="container">
           <div className="row">
-          <RenderProject project = {props.project} />
-          <RenderComments comments = {props.project.comments}/>
+            <RenderProject project = {props.project} />
+            <RenderComments comments = {props.project.comments}/>
           </div>  
       </div>   
     );

@@ -26,4 +26,3 @@ yarn start
 
 Redux
 
-This 100% custom website is open source.

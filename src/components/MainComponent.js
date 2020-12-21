@@ -1,10 +1,11 @@
 import React from 'react';
+import Home from './HomeComponent';
 import Activity from './ActivityComponent';
 import ProjectDetail from './ProjectDetailComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import { PROJECTS } from '../shared/projects';
-
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends React.Component{
   //define the state
@@ -12,24 +13,25 @@ class Main extends React.Component{
     super(props);
     this.state = {
       projects: PROJECTS,
-      selectedProject: null
     };
   }
 
-  onProjectSelect(projectId) {
-    this.setState(
-      {selectedProject: projectId}
-    );
-  }
-
+  //reason exact path, this way can pass in a props to the ActivityComponent, only receive projects.
+  //It wont receive the onClick method anymore, Redirect default path route to home
   render(){
+    const HomePage = () => {
+      return(
+        <Home/>
+      );
+    }
     return (
       <div>
         <Header/>
-        <Activity projects={this.state.projects} 
-          onClick={(projectId) => this.onProjectSelect(projectId)}
-        />
-        <ProjectDetail project={this.state.projects.filter((project) => project.id === this.state.selectedProject)[0]}/>
+        <Switch>
+          <Route path='./home' component={HomePage}/>
+          <Route exact path='/activity' component={() => <Activity projects = {this.state.projects}/>}/>
+          <Redirect to="/home"/>
+        </Switch>
         <Footer/>
       </div>
     );
