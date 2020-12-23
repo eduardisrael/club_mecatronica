@@ -45,7 +45,7 @@ class Header extends React.Component{
                                 <NavLink className="nav-link"  to='/activity'> Proyectos</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to='/contactus'> Contactanos</NavLink>
+                                <NavLink className="nav-link" to='/contactus'> Contáctanos</NavLink>
                             </NavItem>
                             </Nav>
                     </Collapse>

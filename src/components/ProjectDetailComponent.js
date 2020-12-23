@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 //renderiza una nueva Card - function Component
 function RenderProject({project}) {
@@ -17,23 +18,23 @@ function RenderProject({project}) {
 }
 
 //renderiza comentarios y fecha - function Component
-function RenderComments({comments}){
-  if (comments != null){
+function RenderSummaries({summaries}){
+  if (summaries != null){
     let  dateFormat = { year: "numeric", month:"short", day:"numeric"};
-    const commentsProjects = comments.map((comment) => {
+    const summariesProjects = summaries.map((summary) => {
       return(
-        <li key = {comment.id}>
-          <p className="text-justify">{comment.comment}</p>
-          <p className="text-justify">-- {comment.author}, {new Date(comment.date).toLocaleDateString("en-US",dateFormat)}</p>
+        <li key = {summary.id}>
+          <p className="text-justify">{summary.summary}</p>
+          <p className="text-justify">-- {summary.author}, {new Date(summary.date).toLocaleDateString("en-US",dateFormat)}</p>
         </li>
       );
     });
 
     return (
       <div className="col-12 col-md-5 m-1">
-        <h4 className="text-justify">Comments</h4>
+        <h4 className="text-justify">Extracto</h4>
         <ul className="list-unstyled">
-          {commentsProjects}
+          {summariesProjects}
         </ul>
       </div>
     );
@@ -49,8 +50,18 @@ const ProjectDetail = (props) => {
     return(
       <div class="container">
           <div className="row">
-            <RenderProject project = {props.project} />
-            <RenderComments comments = {props.project.comments}/>
+            <Breadcrumb>
+              <BreadcrumbItem><Link to="/activity">Proyecto</Link></BreadcrumbItem>
+              <BreadcrumbItem active>{props.project.name}</BreadcrumbItem>
+            </Breadcrumb>
+            <div className="col-12">
+                <h3>{props.project.name}</h3>
+                <hr />
+            </div> 
+          </div>
+          <div className="row">
+            <RenderProject project={props.project} />
+            <RenderSummaries summaries = {props.summaries}/>
           </div>  
       </div>   
     );

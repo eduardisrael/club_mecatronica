@@ -39,14 +39,25 @@
 address{
   font-size:80%;
   margin:0px;
-  color:white;
 }
 
-.card-img-top {
-  width: 100%;
-  height: 15vw;
-  object-fit: cover;
+.card {
+  border: none;
+  margin: 25px 10px;
 }
+
+.card-group{
+  margin: 25px 40px;
+}
+
+.card-body {
+  box-shadow: 0 0 20px 7px rgba(0,0,0,0.085);
+  text-decoration: none;
+  font-size: 15px;
+  margin-top: auto;
+  font-weight: 600;
+}
+
 
 /*social-follow-component color: #49a1eb;*/
 
